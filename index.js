@@ -40,7 +40,6 @@ async function run() {
         app.post('/users', async (req, res) => {
             const user = req.body;
             const result = await userCollection.insertOne(user)
-            console.log(result);
             user.id = result.insertedId
             res.send(user)
         })
